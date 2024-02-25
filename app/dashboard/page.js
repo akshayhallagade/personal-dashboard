@@ -22,7 +22,7 @@ const Dashboard = () => {
         </div>
       </section>
 
-      <section className="page-2 h-full z-10">adfasdasd</section>
+      {/* <section className="page-2 h-full z-10">adfasdasd</section> */}
     </main>
   );
 };
