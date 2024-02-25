@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className="w-full h-full flex items-center justify-center">
       <Link
-        className="p-2 px-8 font-semibold flex items-center gap-2 bg-teal-800 text-white hover:bg-teal-500 shadow-md shadow-slate-700 rounded-sm"
+        className="p-2 px-8 font-semibold flex items-center gap-2 bg-teal-800 text-white hover:bg-teal-500 shadow-md shadow-slate-700 rounded-sm z-10"
         href={"./dashboard"}
       >
         Welcome To Dashboard

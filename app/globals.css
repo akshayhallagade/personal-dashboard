@@ -5,6 +5,9 @@
 * {
   box-sizing: border-box;
 }
+html {
+  scroll-snap-type: y mandatory;
+}
 
 .homepage {
   background-image: url("../public/background\ 20.jpg");
@@ -12,6 +15,19 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+.music-sidebar::-webkit-scrollbar {
+  display: block;
+  width: 3px;
+}
+
+section {
+  scroll-snap-align: start;
+  /* scroll-snap-stop: always; */
 }
 
 .page-1 {
