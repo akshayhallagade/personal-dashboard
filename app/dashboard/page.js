@@ -6,24 +6,20 @@ import Thought from "@/app/ui/dashboard/Thought";
 
 const Dashboard = () => {
   return (
-    <main className="w-screen h-screen">
-      <section className="page-1 h-full">
-        <div>
-          <Navbar />
-        </div>
-        <div className="flex items-center justify-center flex-col ">
-          <Clock />
-        </div>
-        <div className="flex items-center justify-center flex-col">
-          <Searchbar />
-        </div>
-        <div className="flex justify-center w-full">
-          <Thought />
-        </div>
-      </section>
-
-      {/* <section className="page-2 h-full z-10">adfasdasd</section> */}
-    </main>
+    <section className="page-1 h-full">
+      <div>
+        <Navbar />
+      </div>
+      <div className="flex items-center justify-center flex-col ">
+        <Clock />
+      </div>
+      <div className="flex items-center justify-center flex-col">
+        <Searchbar />
+      </div>
+      <div className="flex justify-center w-full">
+        <Thought />
+      </div>
+    </section>
   );
 };
 

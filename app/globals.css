@@ -5,9 +5,9 @@
 * {
   box-sizing: border-box;
 }
-html {
+/* html {
   scroll-snap-type: y mandatory;
-}
+} */
 
 .homepage {
   background-image: url("../public/background\ 20.jpg");
@@ -18,11 +18,16 @@ html {
 }
 
 ::-webkit-scrollbar {
-  display: none;
+  width: 10px;
 }
-.music-sidebar::-webkit-scrollbar {
-  display: block;
-  width: 3px;
+
+.music-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(19, 19, 19, 0.535);
+  border-radius: 5px;
+}
+.kanban-board::-webkit-scrollbar-thumb {
+  background: rgba(19, 19, 19, 0.535);
+  border-radius: 5px;
 }
 
 section {

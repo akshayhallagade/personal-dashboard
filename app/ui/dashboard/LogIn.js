@@ -7,7 +7,7 @@ const LogIn = () => {
     <div className="relative">
       {/* Element  */}
       <div
-        className="flex justify-center items-center flex-col "
+        className="flex justify-center items-center flex-col cursor-pointer"
         onClick={() => (login ? setLogin(false) : setLogin(true))}
       >
         <button className="flex items-center fill-white hover:fill-red-400 hover:text-red-400 hover:underline">
@@ -23,7 +23,7 @@ const LogIn = () => {
       </div>
       {/* logout  */}
       <div
-        className={`w-fit h-fit right-1 border-blue-400 top-10 p-2 text-xs bg-slate-500 bg-opacity-80 ${
+        className={`w-fit h-fit right-1 border-blue-400 top-10 p-2 text-xs bg-slate-800 bg-opacity-70 shadow-sm shadow-slate-400 z-10 ${
           login ? "hidden" : "absolute"
         }`}
       >

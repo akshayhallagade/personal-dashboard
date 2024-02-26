@@ -5,7 +5,7 @@ const Musicframe = (props) => {
   return (
     <iframe
       title="Embedded Content"
-      className="w-full h-16 mt-2"
+      className="w-full h-20  mt-2 "
       src={`https://open.spotify.com/embed/playlist/${props.data}?utm_source=generator`}
       frameBorder="0"
       allowFullScreen
