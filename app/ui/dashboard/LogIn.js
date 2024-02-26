@@ -23,7 +23,7 @@ const LogIn = () => {
       </div>
       {/* logout  */}
       <div
-        className={`w-fit h-fit right-1 border-blue-400 top-10 p-2 text-xs bg-slate-800 bg-opacity-70 shadow-sm shadow-slate-400 z-10 ${
+        className={`w-fit h-fit right-1 border-blue-400 top-10 p-4 text-xs bg-slate-800 bg-opacity-70 shadow-sm shadow-slate-400 z-10 ${
           login ? "hidden" : "absolute"
         }`}
       >

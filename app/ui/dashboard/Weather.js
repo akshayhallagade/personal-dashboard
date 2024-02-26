@@ -3,8 +3,10 @@ import React, { useState } from "react";
 
 const WeatherCard = () => {
   return (
-    <div className="p-2 w-40">
-      <p className="text-lg">Wardha</p>
+    <div className="p-4 w-40">
+      <p className="text-lg hover:text-red-400 delay-200 duration-200">
+        Wardha
+      </p>
       <p className="text-base text-slate-200">clear</p>
       <div className="flex">
         <h3 className="text-5xl py-2 font-medium">26°</h3>
@@ -36,7 +38,7 @@ const Weather = () => {
       <div
         className={`${
           showWeather ? "absolute" : "hidden"
-        } text-white text-base right-0 bg-slate-800 bg-opacity-70 shadow-sm shadow-slate-400 z-10`}
+        } text-white text-base right-0 top-12 bg-slate-800 bg-opacity-70 shadow-sm shadow-slate-400 z-10`}
       >
         <WeatherCard />
       </div>

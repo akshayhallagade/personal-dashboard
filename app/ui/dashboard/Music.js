@@ -5,10 +5,10 @@ const Musicframe = (props) => {
   return (
     <iframe
       title="Embedded Content"
-      className="w-full h-20  mt-2 "
+      className="w-full mt-2 "
+      height={100}
       src={`https://open.spotify.com/embed/playlist/${props.data}?utm_source=generator`}
-      frameBorder="0"
-      allowFullScreen
+      allowfullscreen
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       loading="lazy"
     ></iframe>
@@ -47,7 +47,7 @@ const Music = () => {
       </button>
       {/* //sidebar */}
       <div
-        className={`music-sidebar w-screen sm:w-64  h-screen p-1 bg-slate-800 top-0 fixed bg-opacity-70 duration-200 z-20 shadow-md shadow-slate-400 overflow-auto ${
+        className={`music-sidebar w-screen sm:w-64  h-screen p-1 bg-slate-800 top-0 fixed bg-opacity-70 duration-200 z-20 shadow-md shadow-slate-400 overflow-scroll ${
           show ? "-left-0" : "-left-full md:-left-72"
         }`}
       >
@@ -61,6 +61,14 @@ const Music = () => {
             <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
           </svg>
         </div>
+        <iframe
+          className="w-full mt-2 "
+          height={500}
+          src="https://open.spotify.com/embed/playlist/0cRRV8OtdG4tHE2KlOg6oS?utm_source=generator&theme=0"
+          allowfullscreen
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
         <div className="w-full">
           {playlists.map((playlist, index) => (
             <Musicframe key={index} data={playlist} />
