@@ -8,7 +8,6 @@ const Musicframe = (props) => {
       className="w-full mt-2 "
       height={100}
       src={`https://open.spotify.com/embed/playlist/${props.data}?utm_source=generator`}
-      allowfullscreen
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       loading="lazy"
     ></iframe>
@@ -65,7 +64,6 @@ const Music = () => {
           className="w-full mt-2 "
           height={500}
           src="https://open.spotify.com/embed/playlist/0cRRV8OtdG4tHE2KlOg6oS?utm_source=generator&theme=0"
-          allowfullscreen
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
         ></iframe>

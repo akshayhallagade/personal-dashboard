@@ -1,7 +1,16 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const WeatherCard = () => {
+  //   useEffect(()=>{
+  //     async function fetchData=()=>{
+  //     try(
+
+  //         await response = fetch("")
+  //         )
+  //       }
+  //   },[])
+
   return (
     <div className="p-4 w-40">
       <p className="text-lg hover:text-red-400 delay-200 duration-200">
