@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav className=" p-0 md:p-2 px-0 md:px-4 w-screen h-fit flex text-white hover:shadow-sm hover:shadow-cyan-800 delay-300 duration-300">
       <ul className="w-full">
         <li className="float-left flex items-center h-full hover:text-red-300 hover:underline cursor-pointer">
-          <Link className="px-2 h-100" href="./dashboard">
+          <Link className="px-2 h-100" href="./dashboard/[id]" as="/dashboard">
             Dashboard
           </Link>
         </li>
@@ -18,8 +18,12 @@ const Navbar = () => {
           </Link>
         </li> */}
         <li className="float-left flex items-center h-full hover:text-red-300 hover:underline cursor-pointer">
-          <Link className="px-2 h-100" href="./dashboard/kanban">
-            Kanban
+          <Link
+            className="px-2 h-100"
+            href="./dashboard/[id]"
+            as="/dashboard/kanban"
+          >
+            Kanban Board
           </Link>
         </li>
         {/* <li className="float-right px-4 h-full flex items-center">
