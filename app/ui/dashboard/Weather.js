@@ -47,7 +47,7 @@ const WeatherCard = ({ SendToTopCard }) => {
   }, [geoLocationStatus]);
 
   // Get the data for location
-  const endpoints = "http://api.weatherapi.com/v1/forecast.json";
+  const endpoints = "https://api.weatherapi.com/v1/forecast.json";
   const apiKey = "9d162c098b9f4d34a6a74901233012";
   useEffect(() => {
     if (geoLocation) {
