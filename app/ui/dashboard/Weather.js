@@ -6,8 +6,9 @@ import {
   Edit,
   NotCurrentLocation,
 } from "@/app/utils/icons";
+import { sendError } from "next/dist/server/api-utils";
 
-const WeatherCard = () => {
+const WeatherCard = ({ SendToTopCard }) => {
   const [geoLocationStatus, setGeoLocationStatus] = useState(false);
   const [tomorrowWeather, setTomorrowWeather] = useState(false);
   const [geoLocation, setGeoLocation] = useState("");
@@ -63,6 +64,12 @@ const WeatherCard = () => {
       fetchData();
     }
   }, [endpoints, apiKey, geoLocation]);
+
+  useEffect(() => {
+    if (Object.keys(apiData) !== 0) {
+      SendToTopCard(apiData);
+    }
+  }, [SendToTopCard, apiData]);
 
   return (
     <div className="px-4 py-6 min-w-48">
@@ -130,7 +137,7 @@ const WeatherCard = () => {
           className="w-15"
           src={
             Object.keys(apiData).length === 0
-              ? "..."
+              ? ""
               : tomorrowWeather
               ? apiData.forecast.forecastday[0].day.condition.icon
               : apiData.current.condition.icon
@@ -230,20 +237,48 @@ const WeatherCard = () => {
 
 const Weather = () => {
   const [showWeather, setShowWeather] = useState(false);
+  const [outerCardData, setOuterCardData] = useState({});
+
+  const innerCardData = (data) => {
+    console.log(data);
+    setOuterCardData(data);
+  };
+
   return (
     <div className="relative cursor-pointer">
-      <div
-        onClick={() => setShowWeather((prevShowWeather) => !prevShowWeather)}
-      >
-        <p className="text-center font-medium text-xl">26°</p>
-        <p className="text-xs">Wardha</p>
+      <div onClick={() => setShowWeather(!showWeather)}>
+        <div className="flex items-center">
+          <div>
+            <img
+              className="w-10"
+              src={
+                Object.keys(outerCardData).length === 0
+                  ? ""
+                  : outerCardData.current.condition.icon
+              }
+              alt=""
+            />
+          </div>
+          <div>
+            <p className="text-center font-medium text-xl">
+              {Object.keys(outerCardData).length === 0
+                ? ""
+                : `${outerCardData.current.feelslike_c}°`}
+            </p>
+            <p className="text-xs">
+              {Object.keys(outerCardData).length === 0
+                ? ""
+                : outerCardData.location.name}
+            </p>
+          </div>
+        </div>
       </div>
       <div
         className={`${
           showWeather ? "absolute" : "hidden"
         } text-white text-base right-0 top-12 bg-slate-800 bg-opacity-70 shadow-sm shadow-slate-400 z-10`}
       >
-        <WeatherCard />
+        <WeatherCard SendToTopCard={innerCardData} />
       </div>
     </div>
   );

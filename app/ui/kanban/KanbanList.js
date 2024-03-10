@@ -1,7 +1,8 @@
 "use client";
+import { Cross, Options } from "@/app/utils/icons";
 import React, { useState } from "react";
 
-const KanbanList = () => {
+const KanbanList = (props) => {
   //updating the value every keypress
   const [val, setVal] = useState("");
 
@@ -44,6 +45,11 @@ const KanbanList = () => {
     setShowMenu(false);
   };
 
+  // // Sending list id to parent to delete
+  // const deleteListHandler = () => {
+  //   deleteListIdFromChild(props.listID);
+  // };
+
   //updating Elemnet Status
   const updateStatus = (e) => {
     // 1. Copy the element to another tempList
@@ -80,16 +86,10 @@ const KanbanList = () => {
               setShowMenu(!showMenu);
             }}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 128 512"
-              className={`w-1 fill-white`}
-            >
-              <path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z" />
-            </svg>
+            <Options className="fill-gray-100" />
           </button>
           {/* // Menu Option for Kanban Board */}
-          <div className={`${showMenu ? "absolute" : "hidden"} right-3 top-0`}>
+          <div className={`${showMenu ? "absolute" : "hidden"} right-6 top-0`}>
             <div
               className={`w-40 flex items-start text-xs justify-center flex-col text-slate-300 bg-gray-800 rounded shadow-sm shadow-slate-400`}
             >
@@ -104,6 +104,12 @@ const KanbanList = () => {
                 onClick={deleteAll}
               >
                 Delete All Task
+              </button>
+              <button
+                className="w-full py-2 px-2 hover:bg-red-500 hover:text-white"
+                // onClick={deleteListHandler}
+              >
+                Delete List
               </button>
             </div>
           </div>
@@ -136,7 +142,7 @@ const KanbanList = () => {
             />
             <p className="bg-transparent h-fit w-full ml-2">{item.item}</p>
             <button onClick={deleteItem} className="cursor-pointer">
-              X
+              <Cross className=" w-4 h-4" />
             </button>
           </div>
         ))}
