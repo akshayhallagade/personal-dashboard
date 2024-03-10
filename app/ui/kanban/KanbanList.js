@@ -2,7 +2,7 @@
 import { Cross, Options } from "@/app/utils/icons";
 import React, { useState } from "react";
 
-const KanbanList = (props) => {
+const KanbanList = () => {
   //updating the value every keypress
   const [val, setVal] = useState("");
 
@@ -105,12 +105,6 @@ const KanbanList = (props) => {
               >
                 Delete All Task
               </button>
-              <button
-                className="w-full py-2 px-2 hover:bg-red-500 hover:text-white"
-                // onClick={deleteListHandler}
-              >
-                Delete List
-              </button>
             </div>
           </div>
         </div>
@@ -141,9 +135,7 @@ const KanbanList = (props) => {
               onChange={updateStatus}
             />
             <p className="bg-transparent h-fit w-full ml-2">{item.item}</p>
-            <button onClick={deleteItem} className="cursor-pointer">
-              <Cross className=" w-4 h-4" />
-            </button>
+            <Cross className="w-4 h-4 fill-white" onClick={deleteItem} />
           </div>
         ))}
       </div>
