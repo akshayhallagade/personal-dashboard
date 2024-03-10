@@ -1,8 +1,13 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { AdminNameContext } from "@/app/context/NameProvider";
+import React, { useEffect, useState, useContext } from "react";
 
 const Clock = () => {
+  const nameProvider = useContext(AdminNameContext);
+  const { adminName } = nameProvider;
+
   const [currTime, setCurrTime] = useState(new Date());
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrTime(() => new Date());
@@ -10,6 +15,15 @@ const Clock = () => {
 
     return () => clearInterval(interval);
   }, []);
+
+  const giveGreeting = (currHours) => {
+    let greeting = "";
+    if (currHours < 12) greeting = "Good Morning";
+    else if (currHours < 16) greeting = "Good Afternoon";
+    else if (currHours < 21) greeting = "Good Evening";
+    else greeting = "Sleep Now, Good Night";
+    return greeting;
+  };
 
   return (
     <div className="h-fit w-fit text-white text-center flex justify-center items-center flex-col">
@@ -21,8 +35,8 @@ const Clock = () => {
           {`:${String(currTime.getSeconds()).padStart(2, "0")}`}
         </a>
       </h1>
-      <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-4 cursor-default">
-        Good Evening, Akshay
+      <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-4 cursor-default ">
+        {`${giveGreeting(currTime.getHours())},${adminName}`}
       </h4>
     </div>
   );
