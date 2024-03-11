@@ -47,10 +47,14 @@ const Searchbar = () => {
             ) : (
               <DuckDuckGo />
             )}
-            <Down className={showSearchEngines ? `-rotate-90` : `rotate-0`} />
+            <Down
+              className={
+                showSearchEngines ? `md:-rotate-90 -rotate-180` : `rotate-0`
+              }
+            />
           </div>
           <div
-            className={`absolute top-0 left-12 bg-black p-2 rounded-md ${
+            className={`absolute bottom-7 right-0 md:bottom-auto md:right-auto md:top-0  md:left-12 bg-black p-2 rounded-md ${
               showSearchEngines ? "visible" : "invisible"
             }`}
           >

@@ -14,6 +14,7 @@ import { IoSearch as Search, IoAddSharp as Add } from "react-icons/io5";
 import { BsBing as Bing } from "react-icons/bs";
 import { SiDuckduckgo as DuckDuckGo } from "react-icons/si";
 import { RxCross2 as Cross } from "react-icons/rx";
+import { FaHandPointer as Tap } from "react-icons/fa6";
 
 export {
   CurrentLocation,
@@ -29,4 +30,5 @@ export {
   Options,
   Add,
   Cross,
+  Tap,
 };
