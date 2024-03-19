@@ -1,10 +1,11 @@
 "use client";
-import Link from "next/link";
 import { useState, useContext } from "react";
 import { AdminNameContext } from "./context/NameProvider";
 import { Tap } from "./utils/icons";
+import Link from "next/link";
 
 export default function Home() {
+  // const router = useRouter();
   const [name, setName] = useState("");
 
   const nameContext = useContext(AdminNameContext);
@@ -26,10 +27,11 @@ export default function Home() {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <button type="Submit">
+        <button>
           <Link
             className="p-2 px-8 font-semibold flex items-center gap-2 bg-teal-800 text-white hover:bg-teal-500 shadow-md shadow-slate-700 rounded-sm z-10"
-            href={"./dashboard"}
+            href={"/dashboard"}
+            type="Submit"
           >
             Welcome To Dashboard
             <Tap />
