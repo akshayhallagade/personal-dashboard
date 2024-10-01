@@ -1,13 +1,20 @@
 "use client";
 import React, { useState } from "react";
-import { Google, Bing, DuckDuckGo, Search, Down } from "@/app/utils/icons";
+import {
+  Google,
+  Bing,
+  DuckDuckGo,
+  Search,
+  Down,
+  Youtube,
+} from "@/app/utils/icons";
 
 const Searchbar = () => {
   const [searchText, setSearchText] = useState("");
   const [showSearchEngines, setShowSearchEngines] = useState(false);
   const [selectSearchEngine, setSearchEngine] = useState("Google");
 
-  const searchData = [Google, Bing, DuckDuckGo];
+  const searchData = [Google, Bing, DuckDuckGo, Youtube];
 
   function searchSubmit(e) {
     e.preventDefault();
@@ -44,6 +51,8 @@ const Searchbar = () => {
               <Google />
             ) : selectSearchEngine === "Bing" ? (
               <Bing />
+            ) : selectSearchEngine === "Youtube" ? (
+              <Youtube />
             ) : (
               <DuckDuckGo />
             )}
@@ -78,6 +87,13 @@ const Searchbar = () => {
               onClick={() => setSearchEngine("DuckDuckGo")}
             >
               <DuckDuckGo /> DuckDuckGo
+            </button>
+            <button
+              type="button"
+              className="flex items-center gap-4 hover:text-red-600"
+              onClick={() => setSearchEngine("Youtube")}
+            >
+              <Youtube /> Youtube
             </button>
           </div>
         </div>

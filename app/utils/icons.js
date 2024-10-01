@@ -10,6 +10,7 @@ import {
   IoMdArrowDropdown as Down,
 } from "react-icons/io";
 import { FaGoogle as Google, FaEllipsisV as Options } from "react-icons/fa";
+import { IoLogoYoutube as Youtube } from "react-icons/io5";
 import { IoSearch as Search, IoAddSharp as Add } from "react-icons/io5";
 import { BsBing as Bing } from "react-icons/bs";
 import { SiDuckduckgo as DuckDuckGo } from "react-icons/si";
@@ -23,6 +24,7 @@ export {
   Direction,
   Repeat,
   Google,
+  Youtube,
   Search,
   Down,
   Bing,
